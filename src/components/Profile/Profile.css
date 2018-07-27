@@ -1,0 +1,188 @@
+.profile{
+    width: 100%;
+    height: 100%;
+}
+
+
+.profileBodyContainer {
+    width: 100%;
+    height: 458px;
+    position: absolute;
+    bottom: 60px;
+    border: 1px solid whitesmoke;
+    border-radius: -41px;
+    background: white;
+    padding: 10px, 12px;
+}
+
+.userImg{
+    width: 100%;
+    height: 268px;
+    background: #5a68d47a;;
+}
+.userBox{
+    position: absolute;
+    top: 85px;
+    left: 300px;
+}
+
+.userNameCircle{
+    border-radius: 151px;
+    border: 1px solid;
+    width: 223px;
+    height: 216px;
+    position: absolute;
+    left: -93px;
+    top: -67px;
+    background-image: linear-gradient(#5b69d4ad, #986abc75, #6271d89c);
+    background-repeat: no-repeat;
+}
+
+.userName {
+    position: absolute;
+    right: -244px;
+    top: -28px;
+    font-size: 27px;
+}
+
+.userDescription{
+    position: absolute;
+    left: 154px;
+    top: 14px;
+    font-size: 24px;
+}
+
+.sideContainerForCustomer, .sideContainerForArtist {
+    position: relative;
+    top: -105%;
+    left: 78%;
+    width: 293px;
+    height: 467px;
+    overflow: scroll;
+}
+
+
+
+.playBox, .cashBox, .favoriteBox, .commentBox{
+    border: 1px solid;
+    border-radius: 12px;
+    height: auto;
+    padding: 17px;
+    margin-bottom: 4px;
+}
+
+.playBox div , .cashBox div{
+    margin: 4px 0px;
+    text-align: center;
+    font-size: 13px;
+    color: gray;
+}
+
+.playBox span , .cashBox span {
+    font-size: 22px;
+    display: block;
+    color: #9456927a;
+}
+
+.cashBox a {
+    background: linen;
+    color: #d6bfd6;
+    position: relative;
+    left: 75px;
+    bottom: -3px;
+    text-align: center;
+    width: 94px;
+    height: 28px;
+    display: block;
+    line-height: 28px;
+    text-decoration: none;
+}
+
+.cashBox a:hover {
+    position: relative;
+    bottom: -5px;
+    left: 77px;
+
+}
+
+.contributor {
+    border-top: 2px solid #6e69cd59;
+    overflow-x: hidden;
+    width: 904px;
+    height: 384px;
+    position: absolute;
+    top: 69px;
+    left: 42px;
+    z-index: 1;
+
+}
+
+.yourTrackHeader{
+    font-size: 21px;
+    padding-left: 10px;
+    border-left: 8px #00008b6b outset;
+}
+.uploadPannel{
+    width: 99%;
+    height: 200px;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 17px;
+    border: 1px solid #8080807d;
+    border-radius: 16px;
+}
+.uploadPannerHeader{
+    font-size: 26px;
+}
+
+.animate
+{
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+.uploadPannel a {
+    position: relative;
+    padding: 10px 14px;
+    margin: 0px 10px 10px 0px;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 17px;
+    color: whitesmoke;
+    text-decoration: none;
+    background-color: #db7093;
+    border-bottom: 5px solid #bd5275;
+    text-shadow: 0px -2px #bd5275;	
+    top: 89px;
+}
+
+.uploadPannel a:active {
+    transform: translate(0px,5px);
+    border-bottom: 1px solid;
+}
+
+.customerPlayer{
+    border-top: 2px solid #6e69cd59;
+    width: 904px;
+    height: 384px;
+    position: absolute;
+    top: 307px;
+    left: 0px;
+}
+
+
+.seekBarBig {
+    
+    width: 400px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: #3a346c;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    right: -246px;
+    top: 133px;
+    cursor: pointer;
+}
+
+

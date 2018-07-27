@@ -1,0 +1,102 @@
+.playerHome{
+    width: 100%;
+    height: 100%;
+}
+
+.tabContainer {
+    width: 100%;
+    height: 458px;
+    position: absolute;
+    bottom: 60px;
+    border: 1px solid whitesmoke;
+    border-radius: -41px;
+    background: white;
+    padding: 10px, 12px;
+}
+
+.tabBody {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: flex-start;
+    position: relative;
+    top: -15px;
+    height: 99%;
+}
+
+.tabBody li {
+    margin: 21px 1px;
+    width: 111px;
+    height: 43px;
+    text-align: center;
+    line-height: 39px;
+}
+
+.tabBody .selected {
+    color: #555;
+    border: 1px solid #ddd;
+    border-top: 2px solid #5868d5;
+    border-bottom: 1px solid #fff;
+}
+
+.tabBody + hr {
+    width: 459px;
+    position: absolute;
+    border-color: #9969bb85;
+    border-bottom-width: 2px;
+    border-style: inherit;
+    top: 219px;
+    right: 56px;
+    transform: rotate(90deg);
+}
+
+.tabPlayer {
+    border-top: 2px solid #6e69cd59;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 904px;
+    height: 384px;
+    position: absolute;
+    top: 69px;
+    left: 42px;
+
+}
+.playerHomePlayer{
+    width: 90%;
+    height: 387px;
+    position: relative;
+    left: 40px;
+}
+.bodyPlayerThumbNail{
+    width: 26%;
+    height: 40%;
+    position: absolute;
+    top: 75px;
+    border: 1px solid;
+}
+.bodyPlayerDescription > i{
+    position: absolute;
+    left: 30%;
+    top: 26%;
+    font-size: 47px;
+    color: darkblue;
+}
+
+.titleAndDescription{
+    position: relative;
+    left: 39%;
+    bottom: -104px;
+}
+
+.possibleChargePlay {
+    position: relative;
+    top: -15px;
+    right: -81%;
+}
+
+
+.clicked {
+    background: #ae71bc;
+}

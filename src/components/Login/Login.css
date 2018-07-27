@@ -1,0 +1,184 @@
+a:link {  text-decoration: none;}
+a:visited { color: black; text-decoration: none;}
+a:hover {  text-decoration: underline;}
+
+.modal-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: table;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+}
+.modal-container.none{
+    display: none;
+}
+.modal-container .modal-background {
+    display: table-cell;
+    background: rgba(119, 117, 117, 0.466);
+    text-align: center;
+    vertical-align: middle;
+}
+.modal-container .modal-background .modal {
+    background: #fff;
+    padding: 16px;
+    display: inline-block;
+    border-radius: 3px;
+    position: relative;
+    border-radius: 20px;
+    width: 300px;
+    height: 340px;
+}
+
+.modalHeader{
+    font-size: 25px;
+    margin-bottom: 17px;
+}
+
+.hrCenter + hr {
+    border-color: #8f7099;
+    margin-bottom: 18px;
+}
+
+.hrCenter {
+    width: 52px;
+    height: 13px;
+    padding: 4px;
+    background: white;
+    position: absolute;
+    left: 135px;
+    top: 51px;
+    font-size: 14px;
+    border-radius: 102px;
+}
+
+.modalBody {
+    margin: 2px;
+}
+.modalBody input{
+    width: 235px;
+    height: 23px;
+    border-radius: 11px;
+    border-style: none;
+    background: #a5a4a945;
+    padding: 10px;
+    margin: 7px;
+}
+.modalBody + hr {
+    border-color: #9f70af82;
+    border-width: 2px;
+    margin-bottom: 18px;
+    position: relative;
+    bottom: -70px;
+}
+
+.modalIcon i {
+    cursor: pointer;
+}
+.signIn{
+    color: whitesmoke;
+    width: 235px;
+    height: 23px;
+    border-radius: 11px;
+    border-style: none;
+    background: #baa998;
+    padding: 10px;
+    margin: 7px;
+    position: absolute;
+    left: 33px;
+}
+
+.loginFooter{
+    font-size: 12px;
+    display: inline-block;
+    position: relative;
+    top: 52px;
+    width: 100%;
+    height: auto;
+}
+
+.loginFooter > div {
+    display: inline-block;
+    margin-right: 71px;
+}
+
+.loginFooter a {
+    border-bottom: none;
+}
+
+i.fa.fa-facebook-square{
+    color: #4267b2;
+    font-size: 50px;
+    margin: 0px 15px;
+}
+
+i.fa.fa-google-plus-circle {
+    color: #ce4639;
+    font-size: 52px;
+    margin: 0px 15px;
+    position: relative;
+    top: 2px;
+}
+
+.modal-container.one {
+    /*transform: scaleX(0) scaleY(1);*/
+    animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.modal-container.one .modal-background .modal {
+    /* 초기 display: none 처럼 크기를 0 으로 하여 보여주지 않음*/
+    transform: scale(0);
+    /* 0.5 초 동안 애니메이션을 실행, 단 0.8초 지연시켜 0.8초 후에 애니메이션을 실행 */
+    animation: zoomIn .5s .8s  cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.modal-container.one.out {
+    transform: scale(1);
+    animation: unfoldOut 1s .3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.modal-container.one.out .modal-background .modal {
+    animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+/* Dimmed showing */
+@keyframes unfoldIn {
+    0% {
+        transform: scaleX(0) scaleY(0.005);
+    }
+    50% {
+        /* 0.5 초간 세로 크기는 작은상태로 가로 너비만 확대  */
+        transform: scaleX(1) scaleY(0.005);
+    }
+    100% {
+        /* 0.5 초간 세로 크기를 확대 */
+        transform: scaleY(1) scaleX(1);
+    }
+}
+/* Show modal content  */
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+/* Hide modal content */
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
+}
+/* Dimmed hiding */
+@keyframes unfoldOut {
+    0% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scaleX(1) scaleY(0.005);
+    }
+    100% {
+        transform: scaleX(0) scaleY(0.005);
+    }
+}
