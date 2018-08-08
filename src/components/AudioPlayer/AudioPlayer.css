@@ -1,0 +1,102 @@
+
+.AudioPlayer{
+    width: 100%;
+    height: 100%;
+}
+
+.AudioPlayerList {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 25px;
+}
+.listAudioContainer{
+    width: 100%;
+    height: 100%;
+}
+
+.listAudioPlayer{
+    width: 100%;
+    bottom: 0px;
+    height: 99%;
+}
+
+.listPlayerButtonContainer{
+    width: 7%;
+    position: relative;
+    left: 27%;
+    top: 24%;
+}
+.listPlayerPlay{
+    width: 54px;
+    height: 30px;
+    background: transparent;
+    border: 0px;
+    cursor: pointer;
+}
+
+.listPlayerPlay + img {
+    display: inline;
+    height: 70px;
+}
+
+
+.listPlayerThumbNail{
+    width: 170px;
+    height: 127px;
+    margin-left: 26px;
+    margin-top: -26px;
+    background: #b88fb8;
+    position: absolute;
+    background-size: 170px 128px;
+    background-repeat: no-repeat;
+}
+
+.listPlayerArtistName{
+    position: relative;
+    width: auto;
+    left: 278px;
+    top: -12px;
+}
+
+.listPlayerSongTitle{
+    position: relative;
+    width: auto;
+    left: 278px;
+    top: -9px;
+}
+
+.listPlayerSeekBar{
+    width: 400px;
+    height: 5px;
+    border-radius: 50px;
+    background-color: #3a346c;
+    display: -ms-flexbox;
+    display: flex;
+    left: 260px;
+    bottom: -78px;
+    position: relative;
+    cursor: pointer;
+}
+.listAudioPlayerTime {
+    width: 100px;
+    color: #04384b;
+    font-size: 14px;
+    position: relative;
+    top: -78px;
+    left: 201px;
+    text-align: center;
+}
+
+.listAudioPlayerTime .start{
+    position: relative;
+    bottom: -2px;
+}
+
+.listAudioPlayerTime .end{
+    position: relative;
+    left: 419px;
+}
+
+.none {
+    display: none;
+}

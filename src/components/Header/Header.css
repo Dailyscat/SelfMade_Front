@@ -5,7 +5,7 @@
 }
 
 .logoSelfMade {
-    font-size: 38px;
+    font-size: 28px;
     position: absolute;
     left: 20px;
     top: 5px;
@@ -27,7 +27,7 @@
 .searchInput {
     position: absolute;
     left: 320px;
-    top: 14px;
+    top: 9px;
     width: auto;
     height: auto;
 }
@@ -36,8 +36,8 @@
     width: 238%;
     border-radius: 30px;
     border-style: none;
-    height: 23px;
-    padding: 9px 14px;
+    height: 16px;
+    padding: 8px 14px;
 }
 
 .searchInput i {
@@ -50,12 +50,13 @@
 
 .registerContainer{
     width: 400px;
-    height: 50px;
+    height: 45px;
     position: absolute;
     right: 0px;
+    display: -ms-flexbox;
     display: flex;
-    padding: 15px;
-    top:-6px;
+    padding: 0px;
+    top: 0px;
 }
 
 .logIn, .createAccount {
@@ -64,7 +65,7 @@
     border-left: 0px outset #b88fb878;
     border-radius: 0px;
     text-align: center;
-    line-height: 39px;
+    line-height: 33px;
     margin: 0 12px;
     font-size: 22px;
     color: wheat;
@@ -87,13 +88,14 @@
 }
 
 .customerMenu a{
-    width: 59%;
-    height: 67px;
+    width: 55%;
+    height: 47px;
     display: block;
-    line-height: 60px;
+    line-height: 44px;
     text-decoration: none;
     color: rgb(202, 195, 195);
-    padding-left: 8px;
+    padding-left: 19px;
+    text-align: center;
 }
 
 .customerMenu a:hover{
@@ -101,9 +103,8 @@
 }
 
 .customerName{
-    width: 32%;
-    height: 30%;
-    font-size: 29px;
+    width: 100%;
+    font-size: 19px;
 }
 .customerName::after {
     content: '\f150';
@@ -119,9 +120,14 @@
     width: 62%;
     height: 118px;
     position: absolute;
-    top: 51px;
+    top: 28px;
     left: -40px;
 }
+
+.clicked {
+    background: #ae71bc;
+}
+
 
 .customerSeg li {
     width: 100%;

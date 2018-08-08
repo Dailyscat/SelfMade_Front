@@ -1,13 +1,5 @@
 import React from 'react';
 import './PlayerHome.css'
-import Play from '../../icon/play-button.svg';
-import Pause from '../../icon/pause.svg';
-import Stop from '../../icon/stop.svg';
-import Previous from '../../icon/back.svg';
-import Next from '../../icon/next.svg';
-import Shuffle from '../../icon/shuffle.svg';
-import Repeat from '../../icon/replay.svg';
-import Speaker from '../../icon/speaker.svg';
 import CategoryPlayList from '../CategoryPlayList/CategoryPlayList'
 
 function offsetLeft(el) {
@@ -24,7 +16,7 @@ export default class PlayerHome extends React.Component {
         super();
 
         this.state ={
-            selected: "HipHop",
+            selected: "hiphop",
         }
     }
 
@@ -38,7 +30,6 @@ export default class PlayerHome extends React.Component {
         this.setState({
             selected: category,
         })
-        
     }
 
 
@@ -47,7 +38,7 @@ export default class PlayerHome extends React.Component {
                 <div className="playerHome">
                     <div className="playerHomeContainer">
                         
-                        <CategoryPlayList category = {this.state.selected} clickTab = {this.clickTab.bind(this)}/>
+                        <CategoryPlayList  isPlaying = {this.props.isPlaying.bind(this)} playList = {this.props.playList} category = {this.state.selected} clickTab = {this.clickTab.bind(this)} chooseCategoryTab = {this.props.chooseCategoryTab.bind(this)}/>
                     </div>
                 </div>
             );

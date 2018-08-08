@@ -25,6 +25,8 @@ export default class Header extends React.Component {
 
     loggedInSegMenuClick (ev) {
         this.props.loggedInSegMenuClick(ev.currentTarget.innerText);
+        ev.target.parentElement.classList.add("none");
+        ev.target.parentElement.parentElement.firstElementChild.classList.remove("clicked");
     }
 
     googleAuthLogout () {
@@ -32,6 +34,7 @@ export default class Header extends React.Component {
     }
 
     render(){
+        
             return(
                 <div className="header">
                     <div className="headerContainer">
@@ -44,7 +47,7 @@ export default class Header extends React.Component {
                         ?
                         <div className ="customerMenu">
                             <a href="" className = "customerMenuContainer" onClick = {this.toggleCustomerSeg.bind(this)}>
-                                <div className ="customerName">Dailyscat</div>
+                                <div className ="customerName">{this.props.user}</div>
                             </a>
                             <ul className ="customerSeg none">
                                 <li className = "profile" onClick = {this.loggedInSegMenuClick.bind(this)}>Profile</li>

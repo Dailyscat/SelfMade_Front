@@ -1,0 +1,26 @@
+
+
+input.musicFile{
+    position: absolute;
+    top: 130px;
+    right: 300px;
+}
+
+input.imgFile{
+    position: absolute;
+    left: 335px;
+    top: 100px;
+}
+
+.musicTitleCategory{
+    position: absolute;
+    left: 335px;
+    top: 165px;
+}
+
+.musicTitleCategory select {
+    margin-right: 6px;
+    width: 73px;
+}
+
+

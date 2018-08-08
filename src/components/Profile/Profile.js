@@ -73,7 +73,7 @@ export default class Profile extends React.Component {
                                 <hr/>
                                 {this.state.selected === "Customer" ? <CustomerSide/> : <ArtistSide/>}
                                 <div className = "contributor">
-                                    {this.state.selected === "Customer" ? <Customer/> : <Artist/>}  
+                                    {this.state.selected === "Customer" ? <Customer  isPlaying = {this.props.isPlaying.bind(this)} playingHistory = {this.props.playingHistory}/> : <Artist isPlaying = {this.props.isPlaying.bind(this)} artistUploadedSong = {this.props.artistUploadedSong}/>}  
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,6 @@
 import React from 'react';
+import AudioPlayer from '../AudioPlayer/AudioPlayer';
+import './CategoryPlayList.css';
 
 function offsetLeft(el) {
     var left = 0;
@@ -17,9 +19,12 @@ export default class CategoryPlayList extends React.Component {
             
         }
     }
+    
     clickTab (ev) {
-        this.props.clickTab(ev.currentTarget.innerText);
+        this.props.clickTab(ev.currentTarget.innerText.toLowerCase());
+        this.props.chooseCategoryTab(ev.currentTarget.innerText.toLowerCase());
     }
+
     togglePlay(){
         this.setState({is_playing: !this.state.is_playing});
         this.refs.player.play();
@@ -38,33 +43,27 @@ export default class CategoryPlayList extends React.Component {
                 <div className = "categoryPlayList">
                     <div className = "tabContainer">
                         <ul className = "tabBody" >
-                            <li className = {this.props.category === "HipHop" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>HipHop</li>
-                            <li className = {this.props.category === "RnB" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>RnB</li>
-                            <li className = {this.props.category === "Soul" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>Soul</li>
-                            <li className = {this.props.category === "Kpop" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>Kpop</li>
-                            <li className = {this.props.category === "Fork" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>Fork</li>
-                            <li className = {this.props.category === "Ballad" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>Ballad</li>
-                            <li className = {this.props.category === "EDM" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>EDM</li>
-                            <li className = {this.props.category === "Etc" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>Etc</li>
+                            <li className = {this.props.category === "hiphop" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>HipHop</li>
+                            <li className = {this.props.category === "rnb" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>RnB</li>
+                            <li className = {this.props.category === "soul" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>Soul</li>
+                            <li className = {this.props.category === "kpop" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>Kpop</li>
+                            <li className = {this.props.category === "fork" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>Fork</li>
+                            <li className = {this.props.category === "ballad" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>Ballad</li>
+                            <li className = {this.props.category === "edm" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>EDM</li>
+                            <li className = {this.props.category === "etc" ?"selected" : ""} onClick = {this.clickTab.bind(this)}>Etc</li>
                         </ul>
                         <hr/>
                         <div className = "tabPlayer">
-                        <div className = "playerHomePlayer">
-                            <div className = "bodyPlayerThumbNail"></div>
-                            <div className = "bodyPlayerDescription">
-                                <i class="fas fa-play"></i>
-                                <div className = "titleAndDescription">
-                                    <div className = "bodyPlayerTilte">title</div>
-                                    <div className = "bodyPlayerDescription">description</div>
-                                </div>
-                                <div className = "possibleChargePlay">possible Charge Play </div>
-                                <div className="seekBarBig" onClick={this.setProgress.bind(this)}>
-                                    <div className="progress" ref="progress_bar" >
-                                        <div className="progressBall"></div>
-                                    </div>
-                                    <div className="handle"></div>
-                                </div>
-                            </div>
+                            <div className = "playerHomePlayer">
+                                <ul className = "audioPlayerUl">
+                                {
+                                    this.props.playList.map((data) => {
+                                    return (
+                                        <AudioPlayer isPlaying = {this.props.isPlaying.bind(this)} songInfo = {data} />
+                                    );
+                                    })
+                                }
+                                </ul>
                             </div>
                         </div>
                     </div>
