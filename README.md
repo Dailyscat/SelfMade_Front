@@ -1,4 +1,4 @@
-# [SelfMade] &middot; [![EBCI]]
+# [SelfMade]
 
 # Introduction
 
