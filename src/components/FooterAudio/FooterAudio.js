@@ -134,10 +134,10 @@ export default class FooterAudio extends React.Component {
                                 <div className="artistName">{currentSong ? currentSong.artist : "Artist"}</div>
                                 <div className="songTitle">{currentSong ? currentSong.title : "Title"}</div>
                             </div>
-                        </div>
+                            <div className="time">
+                                {formatTime(currentTime)} / {formatTime(totalTime)}
+                            </div>
                     </div>
-                    <div className="time">
-                        {formatTime(currentTime)} / {formatTime(totalTime)}
                     </div>
                     <audio ref = {(ref) => this._player = ref} controls autoPlay={this.state.is_playing}>
                     </audio>
