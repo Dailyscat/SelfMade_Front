@@ -72,9 +72,6 @@ npm start
 - MongoDB 기반의 Node.js 전용 ODM 라이브러리 Mongoose
 - MongoDB 호스팅 플랫폼인 mlab
 
-## Test
-
-- 자바스크립트 테스트 프레임워크 Mocha
 
 ## Continuous Integration
 
