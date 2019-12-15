@@ -84,12 +84,6 @@ class App extends Component {
       .catch(err => {
         console.log(err);
       });
-
-    axios
-      .get("http://localhost:4000/api/song/artistUploadedSong")
-      .then(response => {
-        this.setState({ artistUploadedSong: response.data });
-      });
   }
 
   loginModal() {
