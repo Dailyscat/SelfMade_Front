@@ -1,16 +1,14 @@
-import axios from "axios";
-
-const UPLOADED_SONG = "profile/UPLOADED_SONG";
+const FETCH_UPLOADED_SONG = "profile/FETCH_UPLOADED_SONG";
 const IS_PLAYING = "profile/IS_PLAYING";
 const PLAYING_HISTORY = "profile/PLAYING_HISTORY";
 const PAGE_NAME = "profile/PAGE_NAME";
 
-export const uploadedSong = (artistUploadedSong) => {
+export const fetchArtistUploadedSong = (uploadedSong) => {
   return {
-    type: UPLOADED_SONG,
-    artistUploadedSong
+    type: FETCH_UPLOADED_SONG,
+    artistUploadedSong: uploadedSong
   }
-};
+}
 export const isPlaying = (status, playingId) => {
   var newState = {};
 
@@ -65,7 +63,7 @@ const initialState = {
 
 export default function profile(state = initialState, action) {
   switch (action.type) {
-    case UPLOADED_SONG:
+    case FETCH_UPLOADED_SONG:
       return {
         ...state,
         artistUploadedSong: action.artistUploadedSong
@@ -73,9 +71,9 @@ export default function profile(state = initialState, action) {
     case IS_PLAYING:
       return {
         ...state,
-        
+
       }
   }
 }
 
-export const 
+export const

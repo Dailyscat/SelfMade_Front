@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Profile from "../components/Profile";
-import {} from "../store/modules/profile";
+import { fetchArtistUploadedSong } from "../store/modules/profile";
 
 class ProfileContainer extends Component {
+
+  componentDidMount() {
+    const { fetchArtistUploadedSong } = this.props;
+    fetchArtistUploadedSong();
+  }
 
   render() {
     const { artistUploadedSong } = this.props;
@@ -16,7 +21,13 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-
+  fetchArtistUploadedSong: () => {
+    axios
+    .get("http://localhost:4000/api/song/artistUploadedSong")
+    .then(response => {
+      dispatch(fetchArtistUploadedSong(response.data));
+    });
+  }
 });
 
 export default connect(
