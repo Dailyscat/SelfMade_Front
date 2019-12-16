@@ -38,7 +38,7 @@ export default class AudioPlayer extends React.Component {
   togglePlay(ev) {
     this.setState({ is_playing: !this.state.is_playing }, () => {
       var playingId = this.props.songInfo._id;
-      this.props.isPlaying(ev, this.state.is_playing, playingId);
+      this.props.isPlaying(this.state.is_playing, playingId);
     });
   }
 

@@ -3,63 +3,25 @@ const IS_PLAYING = "profile/IS_PLAYING";
 const PLAYING_HISTORY = "profile/PLAYING_HISTORY";
 const PAGE_NAME = "profile/PAGE_NAME";
 
-export const fetchArtistUploadedSong = (uploadedSong) => {
+export const fetchArtistUploadedSong = uploadedSong => {
   return {
     type: FETCH_UPLOADED_SONG,
     artistUploadedSong: uploadedSong
-  }
-}
+  };
+};
 export const isPlaying = (status, playingId) => {
-  var newState = {};
-
-  if (status !== undefined) {
-    newState.isPlaying = status;
-  }
-  newState.playingId = playingId;
-  if (playingId && this.state.isPlaying) {
-    axios.defaults.headers.common["SM_ADMIN_TOKEN"] =
-      window.localStorage.SM_ADMIN_TOKEN;
-    axios
-      .get("http://localhost:4000/api/user/recent")
-      .then(response => {
-        if (!response.data[0].listeningHistory.includes(playingId)) {
-          response.data[0].listeningHistory.push(playingId);
-        } else if (response.data[0].listeningHistory.includes(playingId)) {
-          var idx;
-          response.data[0].listeningHistory.filter(
-            (currentVal, index, arr) => {
-              if (currentVal === playingId) {
-                idx = index;
-                return index;
-              }
-            }
-          );
-          response.data[0].listeningHistory.splice(idx, 1);
-          response.data[0].listeningHistory.push(playingId);
-        }
-
-        axios
-          .put("http://localhost:4000/api/user/updateRecent", {
-            listeningHistory: response.data[0].listeningHistory
-          })
-          .then(response => {
-            console.log(response);
-            return {
-              type: IS_PLAYING,
-              newState: newState
-            };
-          });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
-
-}
+  return {
+    type: IS_PLAYING,
+    isPlaying: status,
+    playingId: playingId
+  };
+};
 
 const initialState = {
   artistUploadedSong: [],
-}
+  isPlaying: false,
+  playingId: ""
+};
 
 export default function profile(state = initialState, action) {
   switch (action.type) {
@@ -67,13 +29,11 @@ export default function profile(state = initialState, action) {
       return {
         ...state,
         artistUploadedSong: action.artistUploadedSong
-      }
+      };
     case IS_PLAYING:
       return {
         ...state,
-
-      }
+        isPlaying: action.isPlaying
+      };
   }
 }
-
-export const
