@@ -24,11 +24,7 @@ class App extends Component {
       chooseCategory: null,
       loggedIn: false,
       profilePageOpen: false,
-      categoryPlayList: [],
-      isPlaying: false,
-      playingId: "",
-      playingHistory: [],
-      artistUploadedSong: []
+      categoryPlayList: []
     };
   }
 

@@ -22,7 +22,9 @@ class ProfileContainer extends Component {
 
 const mapStateToProps = state => ({
   artistUploadedSong: state.profile.artistUploadedSong,
-  isPlaying: state.isPlaying
+  isPlaying: state.profile.isPlaying,
+  playingId: state.profile.playingId,
+  playingHistory: state.profile.playingHistory
 });
 
 const mapDispatchToProps = dispatch => ({
