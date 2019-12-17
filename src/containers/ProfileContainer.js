@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import axios from "axios";
 import Profile from "../components/Profile";
 import {
   fetchArtistUploadedSong,

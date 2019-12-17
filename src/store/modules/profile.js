@@ -47,5 +47,7 @@ export default function profile(state = initialState, action) {
         ...state,
         playingHistory: action.playingHistory
       };
+    default:
+      return state;
   }
 }

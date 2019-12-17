@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import "./App.css";
 // import firebase from './services/firebase'
 import {
-  Home,
   PlayerHome,
-  Profile,
   LoginModal,
   SignUpModal,
   Header,
   FooterAudio
 } from "./components/index";
+import HomeContainer from "./containers/HomeContainer";
+import ProfileContainer from "./containers/ProfileContainer";
 import { Route } from "react-router-dom";
 import axios from "axios";
 
@@ -227,7 +227,7 @@ class App extends Component {
           loginModal={this.loginModal.bind(this)}
           signUpModal={this.signUpModal.bind(this)}
         />
-        <Home chooseCategory={this.chooseCategory.bind(this)} />
+        <HomeContainer />
         {this.state.loginModalOpen ? (
           <LoginModal
             loginModal={this.loginModal.bind(this)}
@@ -251,16 +251,7 @@ class App extends Component {
         ) : (
           ""
         )}
-        {this.state.profilePageOpen ? (
-          <Profile
-            artistUploadedSong={this.state.artistUploadedSong}
-            isPlaying={this.isPlaying.bind(this)}
-            playingHistory={this.state.playingHistory}
-            pageName={this.state.profilePageOpen}
-          />
-        ) : (
-          ""
-        )}
+        {this.state.profilePageOpen ? <ProfileContainer /> : ""}
         <FooterAudio
           playingId={this.state.playingId}
           playList={this.state.categoryPlayList}
