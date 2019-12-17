@@ -3,6 +3,7 @@ import connect from "react-redux";
 import axios from "axios";
 import Home from "../components/Home/Home";
 import { chooseCategory } from "../store/modules/home";
+import { shuffle } from "../util/index";
 
 class HomeContainer extends Component {
   render() {
@@ -22,14 +23,11 @@ const mapDispatchToProps = dispatch => ({
     axios
       .get("http://localhost:4000/api/song/songlist", {
         params: {
-          category: this.state.chooseCategory
+          category: category
         }
       })
       .then(response => {
-        shuffle(response.data);
-        this.setState({
-        });
-        dispatch(categorisePlayList(response.data))
+        dispatch(categorisePlayList(shuffle(response.data)))
       })
       .catch(function(error) {
         console.log(error);
