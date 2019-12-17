@@ -39,11 +39,9 @@ class App extends Component {
     //     var email = user.email;
     //     var photoURL = user.photoURL;
     //     var uid = user.uid;
-
     //     this.setState({
     //       user: displayName
     //     });
-
     //     firebase
     //       .auth()
     //       .setPersistence(firebase.auth.Auth.Persistence.SESSION)
@@ -55,7 +53,6 @@ class App extends Component {
     //         var errorCode = error.code;
     //         var errorMessage = error.message;
     //       });
-
     //     this.setState({
     //       loggedIn: true
     //     });
@@ -65,25 +62,6 @@ class App extends Component {
     //     });
     //   }
     // });
-
-    axios.defaults.headers.common["SM_ADMIN_TOKEN"] =
-      window.localStorage.SM_ADMIN_TOKEN;
-    axios
-      .get("http://localhost:4000/api/user/recent")
-      .then(response => {
-        axios
-          .get("http://localhost:4000/api/song/currentSong", {
-            params: { listeningHistory: response.data[0].listeningHistory }
-          })
-          .then(response => {
-            this.setState({
-              playingHistory: response.data
-            });
-          });
-      })
-      .catch(err => {
-        console.log(err);
-      });
   }
 
   loginModal() {

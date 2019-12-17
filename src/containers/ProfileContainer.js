@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Profile from "../components/Profile";
-import { fetchArtistUploadedSong, isPlaying } from "../store/modules/profile";
+import {
+  fetchArtistUploadedSong,
+  fetchPlayingHistory,
+  isPlaying
+} from "../store/modules/profile";
 
 class ProfileContainer extends Component {
   componentDidMount() {
-    const { fetchArtistUploadedSong } = this.props;
+    const { fetchArtistUploadedSong, fetchPlayingHistory } = this.props;
     fetchArtistUploadedSong();
+    fetchPlayingHistory();
   }
 
   render() {
@@ -26,6 +31,24 @@ const mapDispatchToProps = dispatch => ({
       .get("http://localhost:4000/api/song/artistUploadedSong")
       .then(response => {
         dispatch(fetchArtistUploadedSong(response.data));
+      });
+  },
+  fetchPlayingHistory: () => {
+    axios.defaults.headers.common["SM_ADMIN_TOKEN"] =
+      window.localStorage.SM_ADMIN_TOKEN;
+    axios
+      .get("http://localhost:4000/api/user/recent")
+      .then(response => {
+        axios
+          .get("http://localhost:4000/api/song/currentSong", {
+            params: { listeningHistory: response.data[0].listeningHistory }
+          })
+          .then(response => {
+            dispatch(fetchPlayingHistory(response.data));
+          });
+      })
+      .catch(err => {
+        console.log(err);
       });
   },
   isPlaying: (status, playingId) => {
